@@ -5,7 +5,7 @@
 2. provider2
 3. consumer
 
-两个提供者，一个消费者。两个提供者代码相同，为了方便ide中直接测试loadbalance效果，所以重复建立两个模块。
+两个提供者，一个消费者。两个提供者代码基本相同(为了区别两个节点，api返回字符串区分了下)，为了方便ide中直接测试loadbalance效果，所以重复建立两个模块。
 
 首先https://www.consul.io/ 下载consul注册中心并安装，然后依次运行3个spring boot项目
 
@@ -13,5 +13,6 @@
 
 启动完毕后：
 1. 注册中心 http://localhost:8500/
-2. 消费者 http://localhost:8080/consumer/hello/{word}
+2. 消费者api(可反复调用看lb效果) http://localhost:8080/consumer/hello/{word}
+
 
