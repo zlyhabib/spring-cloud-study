@@ -15,4 +15,6 @@
 1. 注册中心 http://localhost:8500/
 2. 消费者api(可反复调用看lb效果) http://localhost:8080/consumer/hello/{word}
 
+依次停provider/provider2后，都调用2号接口观察返回不同的结果，当没有任何provider时候，触发fein熔断机制，执行HelloServiceImpl的Hystrix服务降级实现
+
 

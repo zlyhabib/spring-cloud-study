@@ -17,7 +17,7 @@ public class HelloController {
 
     @RequestMapping(value = "/{name}", method = RequestMethod.GET)
     public String hello(@PathVariable String name) {
-        return helloService.callHello(name);
+        return helloService.helloEndPoint(name);
     }
 
     ;
