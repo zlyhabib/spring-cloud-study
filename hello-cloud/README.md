@@ -17,4 +17,5 @@
 
 依次停provider/provider2后，都调用2号接口观察返回不同的结果，当没有任何provider时候，触发Feign Hystrix服务降级机制，执行HelloServiceImpl的实现
 
+consul集群 https://blog.csdn.net/admin_ming/article/details/86688771
 
