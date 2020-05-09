@@ -5,22 +5,63 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>com.habib</groupId>
-        <artifactId>springcloud-parent</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
-        <relativePath>parent</relativePath>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.2.2.RELEASE</version>
     </parent>
 
-	<artifactId>springcloud-hello</artifactId>
+    <groupId>com.habib</groupId>
+	<artifactId>springcloud-parent</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>SpringCloud Demo Projects -- HelloCloud</name>
 	<packaging>pom</packaging>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>Hoxton.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.5.1</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <java.version>11</java.version>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
+
+        <guava.version>20.0</guava.version>
+    </properties>
     
     <modules>
-        <module>parent</module>
-        <module>hello-provider</module>
-        <module>hello-provider2</module>
-        <module>hello-consumer</module>
-
+        <module>hello-consumer-consul</module>
+        <module>hello-provider-consul</module>
     </modules>
 </project>
